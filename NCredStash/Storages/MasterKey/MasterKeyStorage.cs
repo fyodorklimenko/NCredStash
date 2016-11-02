@@ -6,7 +6,7 @@ using Amazon.KeyManagementService.Model;
 
 namespace NCredStash.Storages.MasterKey
 {
-    public class MasterKeyStorage : IMasterKeyStorage
+    public sealed class MasterKeyStorage : IMasterKeyStorage
     {
         private readonly IAmazonKeyManagementService _kmsClient;
 

@@ -3,7 +3,7 @@ using Org.BouncyCastle.Security;
 
 namespace NCredStash.Crypto
 {
-    public class AesCrypto : AesCryptoBase
+    public sealed class AesCrypto : AesCryptoBase
     {
         public override byte[] Decrypt(byte[] key, byte[] contents)
         {

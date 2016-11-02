@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace NCredStash.Crypto
 {
-    public class HmacSha256Verifier : IHmacVerifier
+    public sealed class HmacSha256Verifier : IHmacVerifier
     {
         public void Verify(byte[] hmacKey, byte[] contentsBytes, string hmac)
         {

@@ -7,19 +7,19 @@ using Amazon.DynamoDBv2.Model;
 
 namespace NCredStash.Storages.Credential
 {
-    public class CredentialStorage : ICredentialStorage
+    public sealed class CredentialStorage : ICredentialStorage
     {
-        private readonly CredStashConfig _config;
+        private readonly CredStashConfig _credStashConfig;
         private readonly IAmazonDynamoDB _ddbClient;
 
-        public CredentialStorage(CredStashConfig config, IAmazonDynamoDB ddbClient)
+        public CredentialStorage(CredStashConfig credStashConfig, IAmazonDynamoDB ddbClient)
         {
-            if (config == null)
-                throw new ArgumentNullException("config");
+            if (credStashConfig == null)
+                throw new ArgumentNullException("credStashConfig");
             if (ddbClient == null)
                 throw new ArgumentNullException("ddbClient");
 
-            _config = config;
+            _credStashConfig = credStashConfig;
             _ddbClient = ddbClient;
         }
 
@@ -27,14 +27,14 @@ namespace NCredStash.Storages.Credential
         {
             var request = new QueryRequest
             {
-                TableName = _config.TableName,
+                TableName = _credStashConfig.TableName,
                 Limit = 1,
                 ScanIndexForward = false,
                 ConsistentRead = true,
                 KeyConditions = new Dictionary<string, Condition>
                 {
                     {
-                        _config.KeyName, new Condition
+                        _credStashConfig.KeyName, new Condition
                         {
                             ComparisonOperator = ComparisonOperator.EQ,
                             AttributeValueList = new List<AttributeValue> {new AttributeValue(key)}

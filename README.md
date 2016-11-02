@@ -7,7 +7,9 @@ NCredStash provides an easy way to securely store and retrieve credentials in AW
 NCredStash is licensed under the [MIT License](https://github.com/kokhans/NCredStash/blob/master/LICENSE).
 
 ## Dependencies
-* AWSSDK
+* AWSSDK.Core
+* AWSSDK.DynamoDBv2
+* AWSSDK.KeyManagementService
 * BounyCastle
 * NUnit
 * NSubstitute

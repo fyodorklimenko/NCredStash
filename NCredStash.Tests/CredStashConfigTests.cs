@@ -1,5 +1,4 @@
-﻿using Amazon;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace NCredStash.Tests
 {
@@ -12,12 +11,11 @@ namespace NCredStash.Tests
             // Arrange
 
             // Act
-            var result = CredStashConfig.CreateConfig(RegionEndpoint.USEast1);
+            var result = CredStashConfig.Default();
 
             // Assert
             Assert.AreEqual("credential-store", result.TableName);
             Assert.AreEqual("name", result.KeyName);
-            Assert.AreEqual(RegionEndpoint.USEast1, result.RegionEndpoint);
         }
     }
 }
