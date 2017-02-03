@@ -1,5 +1,5 @@
 {
-  "version": "3.0.1-*",
+  "version": "3.1.0-*",
   "title": "NCredStash.Tests",
   "authors": [ "Serhiy Kokhan" ],
   "copyright": "Copyright © Serhiy Kokhan 2017",
@@ -14,7 +14,7 @@
   },
 
   "dependencies": {
-    "NCredStash": "3.0.1-*",
+    "NCredStash": "3.1.0-*",
     "NSubstitute": "2.0.1-rc",
     "xunit": "2.2.0-beta5-build3474",
     "dotnet-test-xunit": "2.2.0-preview2-build1029"
