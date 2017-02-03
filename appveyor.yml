@@ -44,10 +44,10 @@ test_script:
   - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
 
 before_deploy:
-  - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION% -o artifacts\NCredStash
+  - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION%
 
 artifacts:
-  - path: artifacts\NCredStash\*.*
+  - path: '**\*.nupkg'
   
 deploy:
 - provider: GitHub
