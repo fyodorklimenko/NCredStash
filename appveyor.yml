@@ -45,6 +45,9 @@ test_script:
 
 before_deploy:
   - dotnet pack --no-build src\NCredStash\project.json
+
+artifacts:
+  - path: src\NCredStash\bin\%CONFIGURATION%\*.*
   
 deploy:
 - provider: GitHub
