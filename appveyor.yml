@@ -17,7 +17,7 @@ matrix:
   fast_finish: true
 
 cache:
-- '%USERPROFILE%\.nuget\packages'
+  - '%USERPROFILE%\.nuget\packages'
 
 nuget:
   disable_publish_on_pr: true
@@ -29,22 +29,22 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
 before_build:
-- dotnet restore
-- tools\Update-Projects-Version.ps1
+  - dotnet restore
+  - tools\Update-Projects-Version.ps1
 
 build:
   publish_nuget: true
   publish_nuget_symbols: true
 
 build_script:
-- dotnet build src\NCredStash
-- dotnet build test\NCredStash.Tests
+  - dotnet build src\NCredStash
+  - dotnet build test\NCredStash.Tests
   
-test:
-- dotnet test test\NCredStash.Tests
+test_script:
+  - dotnet test test\NCredStash.Tests
 
 - before_deploy:
-- dotnet pack --no-build src\NCredStash\project.json
+  - dotnet pack --no-build src\NCredStash\project.json
   
 deploy:
 - provider: GitHub
