@@ -30,7 +30,7 @@ environment:
 
 before_build:
   - dotnet restore
-  - tools\Update-Projects-Version.ps1
+  - ps: tools\Update-Projects-Version.ps1
 
 build:
   publish_nuget: true
