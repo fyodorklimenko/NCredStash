@@ -29,6 +29,30 @@
         }
       }
     },
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Runtime": {
+          "type": "build",
+          "version": ""
+        }
+      }
+    },
+    "net452": {
+      "frameworkAssemblies": {
+        "System.Runtime": {
+          "type": "build",
+          "version": ""
+        }
+      }
+    },
+    "net46": {
+      "frameworkAssemblies": {
+        "System.Runtime": {
+          "type": "build",
+          "version": ""
+        }
+      }
+    },
     "net461": {
       "frameworkAssemblies": {
         "System.Runtime": {

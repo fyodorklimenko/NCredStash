@@ -29,6 +29,27 @@
         "BouncyCastle.CoreClr": "1.0.0"
       }
     },
+    "net45": {
+      "dependencies": {
+        "BouncyCastle": "1.8.1"
+      }
+    },
+    "net451": {
+      "dependencies": {
+        "BouncyCastle": "1.8.1"
+      }
+    },
+    "net452": {
+      "dependencies": {
+        "BouncyCastle": "1.8.1"
+      }
+    },
+
+    "net46": {
+      "dependencies": {
+        "BouncyCastle": "1.8.1"
+      }
+    },
     "net461": {
       "dependencies": {
         "BouncyCastle": "1.8.1"
