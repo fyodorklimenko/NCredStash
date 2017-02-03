@@ -37,14 +37,14 @@ build:
   publish_nuget_symbols: true
 
 build_script:
-  - dotnet build src\NCredStash
-  - dotnet build test\NCredStash.Tests
+  - dotnet build src\NCredStash -c %CONFIGURATION%
+  - dotnet build test\NCredStash.Tests -c %CONFIGURATION%
   
 test_script:
-  - dotnet test test\NCredStash.Tests
+  - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
 
 before_deploy:
-  - dotnet pack --no-build src\NCredStash\project.json
+  - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION%
 
 artifacts:
   - path: src\NCredStash\bin\%CONFIGURATION%\*.*
