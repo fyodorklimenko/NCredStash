@@ -43,7 +43,7 @@ build_script:
 test_script:
   - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
 
-before_deploy:
+after_test:
   - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION%
 
 artifacts:
