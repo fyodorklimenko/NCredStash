@@ -1,0 +1,43 @@
+{
+  "version": "3.0.0-*",
+  "title": "NCredStash.Tests",
+  "authors": [ "Serhiy Kokhan" ],
+  "copyright": "Copyright © Serhiy Kokhan 2017",
+  "description": "NCredStash provides an easy way to securely store and retrieve credentials in AWS environment.",
+  "packOptions": {
+    "owners": [ "Serhiy Kokhan" ],
+    "repository": {
+      "url": "https://github.com/kokhans/NCredStash"
+    },
+    "requireLicenseAcceptance": true,
+    "licenseUrl": "https://github.com/kokhans/NCredStash/blob/master/LICENSE"
+  },
+
+  "dependencies": {
+    "NCredStash": "3.0.0-*",
+    "NSubstitute": "2.0.1-rc",
+    "xunit": "2.2.0-beta5-build3474",
+    "dotnet-test-xunit": "2.2.0-preview2-build1029"
+  },
+
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "type": "platform",
+          "version": "1.0.0"
+        }
+      }
+    },
+    "net461": {
+      "frameworkAssemblies": {
+        "System.Runtime": {
+          "type": "build",
+          "version": ""
+        }
+      }
+    }
+  },
+
+  "testRunner": "xunit"
+}
