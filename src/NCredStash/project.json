@@ -6,13 +6,11 @@
   "description": "NCredStash provides an easy way to securely store and retrieve credentials in AWS environment.",
   "packOptions": {
     "owners": [ "Serhiy Kokhan" ],
-    "repository": {
-      "url": "https://github.com/kokhans/NCredStash"
-    },
+    "projectUrl": "https://github.com/kokhans/NCredStash",
     "requireLicenseAcceptance": true,
     "licenseUrl": "https://github.com/kokhans/NCredStash/blob/master/LICENSE"
   },
-  
+
   "dependencies": {
     "AWSSDK.Core": "3.3.8",
     "AWSSDK.DynamoDBv2": "3.3.2.1",

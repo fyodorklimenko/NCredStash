@@ -3,11 +3,18 @@ version: 3.1.{build}
 branches:
   only:
     - master
+    - hotfix
+    - release
+    - develop
+    - feature
   except:
     - gh-pages
 
 skip_tags: true
 skip_branch_with_pr: true
+skip_commits:
+  files:
+    - README.md
 
 clone_folder: C:\Projects\NCredStash
 
@@ -44,10 +51,10 @@ test_script:
   - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
 
 after_test:
-  - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION%
+  - dotnet pack --no-build src\NCredStash\project.json -c %CONFIGURATION% -o artifacts\nuget
 
 artifacts:
-  - path: '**\*.nupkg'
+  - path: 'artifacts\nuget\*.*'
   
 deploy:
 - provider: GitHub
