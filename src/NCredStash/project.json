@@ -2,7 +2,7 @@
   "version": "3.1.0-*",
   "title": "NCredStash",
   "authors": [ "Serhiy Kokhan" ],
-  "copyright": "Copyright © Serhiy Kokhan 2017",
+  "copyright": "Copyright (c) Serhiy Kokhan 2017",
   "description": "NCredStash provides an easy way to securely store and retrieve credentials in AWS environment.",
   "packOptions": {
     "owners": [ "Serhiy Kokhan" ],
