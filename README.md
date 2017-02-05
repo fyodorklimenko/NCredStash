@@ -6,6 +6,10 @@ NCredStash provides an easy way to securely store and retrieve credentials in AW
 ## Getting Started
 ### Supported Frameworks
 * netcoreapp1.0
+* net45
+* net451
+* net452
+* net46
 * net461
 
 ### Basic Use
