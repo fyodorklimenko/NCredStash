@@ -3,10 +3,7 @@ version: 3.1.{build}
 branches:
   only:
     - master
-    - hotfix
-    - release
-    - develop
-    - feature
+    - /release\/.*/
   except:
     - gh-pages
 
