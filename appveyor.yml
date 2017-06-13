@@ -28,14 +28,13 @@ nuget:
 platform: Any CPU
 configuration: Release
 
-image:
-  - Visual Studio 2015
-  - Visual Studio 2017
+image: Visual Studio 2017
 
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
 before_build:
+  - cmd: dotnet --version
   - dotnet restore
 
 build:
@@ -43,8 +42,7 @@ build:
   publish_nuget_symbols: true
 
 build_script:
-  - dotnet msbuild src\NCredStash /p:Configuration=%CONFIGURATION%
-  - dotnet msbuild src\NCredStash.Tests /p:Configuration=%CONFIGURATION%
+  - dotnet publish src\NCredStash -c %CONFIGURATION%
   
 test_script:
   - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
