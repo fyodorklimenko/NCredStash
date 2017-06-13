@@ -46,4 +46,4 @@ build_script:
   
 test_script:
   - dotnet restore test\NCredStash.Tests\NCredStash.Tests.csproj
-  - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
+  - dotnet test test\NCredStash.Tests\NCredStash.Tests.csproj -c %CONFIGURATION% -f netcoreapp1.0
