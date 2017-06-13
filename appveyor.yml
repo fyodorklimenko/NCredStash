@@ -34,8 +34,8 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
 before_build:
-  - cmd: dotnet --version
-  - dotnet restore
+  - dotnet --version
+  - dotnet restore src\NCredStash\NCredStash.csproj
 
 build:
   publish_nuget: true
@@ -45,4 +45,5 @@ build_script:
   - dotnet publish src\NCredStash -c %CONFIGURATION%
   
 test_script:
+  - dotnet restore test\NCredStash.Tests\NCredStash.Tests.csproj
   - dotnet test test\NCredStash.Tests -c %CONFIGURATION%
