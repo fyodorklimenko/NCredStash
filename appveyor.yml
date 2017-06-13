@@ -34,7 +34,6 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
 before_build:
-  - dotnet --version
   - dotnet restore src\NCredStash\NCredStash.csproj
 
 build:
@@ -42,8 +41,14 @@ build:
   publish_nuget_symbols: true
 
 build_script:
-  - dotnet publish src\NCredStash\NCredStash.csproj -c %CONFIGURATION% -f netcoreapp1.0
+  - dotnet msbuild src\NCredStash\NCredStash.csproj /p:Configuration=%CONFIGURATION%
   
 test_script:
   - dotnet restore test\NCredStash.Tests\NCredStash.Tests.csproj
-  - dotnet test test\NCredStash.Tests\NCredStash.Tests.csproj -c %CONFIGURATION% -f netcoreapp1.0
+  - dotnet test test\NCredStash.Tests\NCredStash.Tests.csproj -c %CONFIGURATION%
+
+after_test:
+  - dotnet pack src\NCredStash\NCredStash.csproj /p:PackageVersion=%APPVEYOR_BUILD_VERSION% -c %CONFIGURATION% -o artifacts\nuget --no-build
+  
+artifacts:
+  - path: 'artifacts\nuget\*.*'
