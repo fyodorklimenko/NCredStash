@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using Amazon.DynamoDBv2;
@@ -48,7 +49,11 @@ namespace NCredStash.Storages.Credential
 
             var item = response.Items.First();
 
-            return item.ToDictionary(attribute => attribute.Key, attribute => attribute.Value.S);
+            return item.ToDictionary(
+                attribute => attribute.Key,
+                attribute => attribute.Value.B != null && attribute.Value.B.Length > 0 
+                    ? new StreamReader(attribute.Value.B).ReadToEnd()
+                    : attribute.Value.S);
         }
     }
 }
