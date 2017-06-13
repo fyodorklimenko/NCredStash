@@ -42,7 +42,7 @@ build:
   publish_nuget_symbols: true
 
 build_script:
-  - dotnet publish src\NCredStash -c %CONFIGURATION%
+  - dotnet publish src\NCredStash\NCredStash.csproj -c %CONFIGURATION%
   
 test_script:
   - dotnet restore test\NCredStash.Tests\NCredStash.Tests.csproj
