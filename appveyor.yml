@@ -48,7 +48,7 @@ test_script:
   - dotnet test test\NCredStash.Tests\NCredStash.Tests.csproj -c %CONFIGURATION%
 
 after_test:
-  - dotnet pack src\NCredStash\NCredStash.csproj /p:PackageVersion=%APPVEYOR_BUILD_VERSION% -c %CONFIGURATION% -o artifacts\nuget --no-build
+  - dotnet pack src\NCredStash\NCredStash.csproj /p:PackageVersion=%APPVEYOR_BUILD_VERSION% -c %CONFIGURATION% -o ..\..\artifacts\nuget --no-build
   
 artifacts:
   - path: 'artifacts\nuget\*.*'
