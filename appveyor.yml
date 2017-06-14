@@ -1,4 +1,4 @@
-version: 3.1.{build}
+version: 3.2.{build}
 
 branches:
   only:
@@ -52,3 +52,17 @@ after_test:
   
 artifacts:
   - path: 'artifacts\nuget\*.*'
+  
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: HJ2BBqF1As8CM3wNl5558hAR/u5LClT+PBrHIT9G4Kvl5/vME2NAWtVLQctYjzoq
+  on:
+    branch: master
+    appveyor_repo_tag: false
+- provider: NuGet
+  api_key:
+    secure: V4shumgGdi9wQM6i6BpHk3JlUNrx1yFWj7ISQaBvslqcJXSpLXS/zMprWxFekixJ
+  on:
+    branch: master
+    appveyor_repo_tag: false
